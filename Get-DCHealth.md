@@ -156,8 +156,11 @@ WinRM
 
 ## Events
 WMI
+Event 21 failed smart card logon
 - Get-WinEvent -computername $computerName -FilterHashtable @{ logname = "System"; ID = "21"; StartTime = [datetime]::today} -ErrorAction SilentlyContinue
+Event 29 KDC Smart card event
 - Get-WinEvent -computername $computerName -FilterHashtable @{ logname = "System"; ID = "29"; StartTime = [datetime]::today} -ErrorAction SilentlyContinue
+
 
 ## Show Repl
 
