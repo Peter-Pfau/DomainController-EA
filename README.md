@@ -3,6 +3,8 @@ Domain Controller Management and Monitoring
 
 <a href="./Get-DCHealth">Get-DCHealth Documentation</a>
 
+<a href="./CodeSnippets">Code Snippets</a>
+
 # Todo
 ## Add dynamic event lookups
 - $events4011 = Get-WinEvent -computername $DCname -FilterHashtable @{ logname = "DNS Server"; ID = "4011"; StartTime = [datetime]::today}
