@@ -83,8 +83,10 @@ WinRM
 
 ## Up Time
 WMI
-- Get-WmiObject -Class Win32_OperatingSystem -ComputerName $computerName
-- $boottime=$wmi.ConvertToDateTime($wmi.LastBootUpTime)
+```PowerShell
+$wim = Get-WmiObject -Class Win32_OperatingSystem -ComputerName $computerName
+$wmi =  $boottime=$wmi.ConvertToDateTime($wmi.LastBootUpTime)
+```
 
 ## CRL
 CRL Validity Extension
