@@ -10,9 +10,11 @@ Directory Operations
 3. WMI (Port 445) Get-WmiObject -computerName $computerName -class win32_operatingsystem -erroraction SilentlyContinue
 
 ## Parse the Domain from the FQDN
-  - $pos= $computerName.IndexOf(".")
-  - $hostName = $computername.Substring(0,$pos)
-  - $domain = $computername.Substring($pos+1)
+```PowerShell
+$pos= $computerName.IndexOf(".")
+$hostName = $computername.Substring(0,$pos)
+$domain = $computername.Substring($pos+1)
+```
 
 ## Operating System
   - WMI
@@ -50,8 +52,10 @@ WinRM
 
 ## Memory
 WinRM
-- invoke-command -ComputerName $computerName -ScriptBlock {(systeminfo | Select-String 'Total Physical Memory:').ToString().Split(':')[1].Trim()}
-- invoke-command -ComputerName $computerName -ScriptBlock {(systeminfo | Select-String 'Available Physical Memory:').ToString().Split(':')[1].Trim()}
+```PowerShell
+invoke-command -ComputerName $computerName -ScriptBlock {(systeminfo | Select-String 'Total Physical Memory:').ToString().Split(':')[1].Trim()}
+invoke-command -ComputerName $computerName -ScriptBlock {(systeminfo | Select-String 'Available Physical Memory:').ToString().Split(':')[1].Trim()}
+```
 
 ## Certificates
 WinRM
